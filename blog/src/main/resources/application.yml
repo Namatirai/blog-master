@@ -1,0 +1,24 @@
+server:
+  port: 5590
+thymeleaf:
+  enabled: true
+  prefix: classpath:/templates/
+  suffix: .html
+  cache: false
+  mode: HTML
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5455/my_blog_database
+    username: namatirai
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  main:
+    web-application-type: servlet

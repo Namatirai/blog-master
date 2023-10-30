@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres
+    container_name: my_blog_db
+    environment:
+      POSTGRES_DB: my_blog_database
+      POSTGRES_USER: namatirai
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5455:5432"
+    networks:
+      - my_blog_db
+    restart: unless-stopped
+
+
+networks:
+  my_blog_db:
+    driver: bridge
+
+
